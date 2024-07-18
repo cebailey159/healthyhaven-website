@@ -2,12 +2,17 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: cursive;
 }
 
-.body{
+body{
     font-family: arial, sans-serif;
     line-height: 1.6;
     color: #333;
+    background: url(HHBackground.jpg)no-repeat center center/cover;
+    background-attachment:fixed;
+    margin: 0;
+    padding: 0;
 }
 
 .container{
@@ -17,9 +22,10 @@
 }
 
 .header{
-    background: #000000;
-    color: #000000;
-    padding: 20px 0;
+    
+    color:bisque;
+    padding: 20px;
+    position: relative;
 }
 
 .header .logo{
@@ -33,24 +39,42 @@
 }
 
 .nav ul li{
-    display: inline;
-    margin: 0 15px;
+    display: inline-flex;
+    margin:  15px;
+    position: relative;
 }
 
 .nav ul li a{
-    color: #fff;
+    color:bisque;
     text-decoration: none;
+    position: relative;
+    padding: 5px 0;
+}
+
+.nav ul li a::after{
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin: auto;
+    left: 0;
+    right: 0;
+    background: bisque;
+    transition: width 0.4s ease;
+}
+
+.nav ul li a:hover::after{
+    width: 100%;
 }
 
 .hero{
     position: relative;
-    background: url(HHBackground.jpg)no-repeat center center/cover;
-    height: 400px;
     text-align: center;
-    color: #fff;
+    color: bisque;
 }
 
-.hero::before{
+body::before{
     content: '';
     position: absolute;
     top: 0;
@@ -90,14 +114,69 @@ section{
     margin: 10px 0;
 }
 
-
-
 .footer .social-media a {
     margin: 0 10px;
     color: #fff;
     text-decoration: none;
+    position: relative;
 }
 
 .footer .social-media a:hover {
     text-decoration: underline;
+}
+
+/* Menu Styling */
+
+.menu h2{
+    font-family: cursive;
+    color: bisque;
+    position: relative;
+    font-size: 30px;
+}
+
+.menu-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.menu-item {
+    background: #fff;
+    background: rgba(0,0,0,0.1);
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin: 10px;
+    padding: 20px;
+    width: calc(33% - 40px);
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+}
+
+.menu-item img {
+    position: relative;
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.menu-item:hover {
+    transform: translateY(-10px);
+}
+
+
+.menu-item h3 {
+    position: relative;
+    font-size: 24px;
+    font-family:cursive;
+    color: bisque;
+    margin: 10px 0;        
+}
+
+.menu-item p{
+    position: relative;
+    color: bisque;
+    font-family: cursive;
 }
